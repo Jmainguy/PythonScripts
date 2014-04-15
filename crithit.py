@@ -1,11 +1,4 @@
 #!/usr/bin/python
-#This script downloads the podcast from Critical Hit
-#run it with the episode number as the argument
-#Use a second argument if you want a range of Episodes
-#Example. ./crithit.py 237 
-#would download episode 237
-#./crithit 8 237
-#Would download episodes 8 through 237 to the current dir.
 import sys, getopt, urllib
 if len(sys.argv) == 3:
 	EPISODE=int(sys.argv[1])
@@ -111,5 +104,19 @@ while (EPISODE <= END):
 		GETURL=urllib.urlretrieve ("http://traffic.libsyn.com/majorspoilers/criticalhit" + str(EPISODE) + ".mp3", "CriticalHit" + str(EPISODE).zfill(3) + ".mp3")
 	if EPISODE in mylist16:
 		GETURL=urllib.urlretrieve ("http://traffic.libsyn.com/majorspoilers/CriticalHit" + str(EPISODE) + ".mp3", "CriticalHit" + str(EPISODE).zfill(3) + ".mp3")
+	if EPISODE == 1:
+		GETURL=urllib.urlretrieve ("http://media.libsyn.com/media/majorspoilers/majorspoilers_28.mp3", "CriticalHit" + str(EPISODE).zfill(3) + ".mp3")
+	if EPISODE == 2:
+		GETURL=urllib.urlretrieve ("http://media.libsyn.com/media/majorspoilers/majorspoilers_89.mp3", "CriticalHit" + str(EPISODE).zfill(3) + ".mp3")
+	if EPISODE == 3:
+		GETURL=urllib.urlretrieve ("http://media.libsyn.com/media/majorspoilers/majorspoilers109.mp3", "CriticalHit" + str(EPISODE).zfill(3) + ".mp3")
+	if EPISODE == 4:
+		GETURL=urllib.urlretrieve ("http://media.libsyn.com/media/majorspoilers/majorspoilers110.mp3", "CriticalHit" + str(EPISODE).zfill(3) + ".mp3")
+	if EPISODE == 5:
+		GETURL=urllib.urlretrieve ("http://media.libsyn.com/media/majorspoilers/majorspoilers111.mp3", "CriticalHit" + str(EPISODE).zfill(3) + ".mp3")
+	if EPISODE == 6:
+		GETURL=urllib.urlretrieve ("http://media.libsyn.com/media/majorspoilers/majorspoilers112.mp3", "CriticalHit" + str(EPISODE).zfill(3) + ".mp3")
+	if EPISODE == 7:
+		GETURL=urllib.urlretrieve ("http://media.libsyn.com/media/majorspoilers/majorspoilers113.mp3", "CriticalHit" + str(EPISODE).zfill(3) + ".mp3")
 	GETURL
 	EPISODE += 1
