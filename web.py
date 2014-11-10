@@ -1,7 +1,7 @@
 #!/usr/bin/python
 import sys, getopt, os, re, crithit
 EPISODE=str(sys.argv[1])
-mp3 = 'CriticalHit' + EPISODE + '.mp3'
+mp3 = 'CriticalHit' + str(EPISODE).zfill(3) + '.mp3'
 file2 = open("index.html.tmp", "w")
 with open("index.html", "r") as file:
     for line in file:
