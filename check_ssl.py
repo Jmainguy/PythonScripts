@@ -16,6 +16,7 @@ try:
     s.settimeout(15)
     s.connect((hostname, 443))
     cert = s.getpeercert()
+    issue  = cert["notBefore"]
     expire = cert["notAfter"]
     issuer = cert["issuer"]
     for x in issuer:
@@ -24,10 +25,12 @@ try:
     today = datetime.datetime.today()
     format = "%b %d %H:%M:%S %Y %Z"   
     expire_date = datetime.datetime.strptime(expire, format)
+    issue_date = datetime.datetime.strptime(issue, format)
     delta = expire_date - today
     if commonName:
         print "Issuer: %s" % commonName
     print "Today: %s" % today
+    print "Issued: %s" % issue_date
     print "Expires: %s" % expire_date
     print "Days Left: %s" % delta.days
     if delta.days <= 1:
